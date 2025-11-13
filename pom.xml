@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cd6f50c4-78a6-4d90-bffe-276b2cf65c87</groupId>
     <artifactId>test-munit</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <packaging>mule-application</packaging>
     <name>test-munit</name>
     <properties>

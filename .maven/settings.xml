@@ -8,8 +8,8 @@
   <servers>
     <server>
       <id>Repository</id>
-      <username>${anypoint.username}</username>
-      <password>${anypoint.password}</password>
+      <username>${username}</username>
+      <password>${password}</password>
     </server>
   </servers>
 

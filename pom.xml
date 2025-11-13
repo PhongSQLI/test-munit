@@ -31,8 +31,8 @@
                         <environment>Dev</environment>
                         <target>Cloudhub-AP-Southeast-1</target>
                         <muleVersion>4.10.1</muleVersion>
-                        <username>${anypoint.username}</username>
-                        <password>${anypointt.password}</password>
+                        <username>${username}</username>
+                        <password>${password}</password>
                         <applicationName>${project.artifactId}</applicationName>
                         <replicas>1</replicas>
                         <vCores>0.1</vCores>

@@ -8,8 +8,8 @@
   <servers>
     <server>
       <id>Repository</id>
-      <username>${username}</username>
-      <password>${password}</password>
+      <username>~~~CLient~~~</username>
+      <password>${clientId}~?~${clientSecret}</password>
     </server>
   </servers>
 

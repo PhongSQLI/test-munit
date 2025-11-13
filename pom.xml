@@ -31,8 +31,9 @@
                         <environment>Dev</environment>
                         <target>Cloudhub-AP-Southeast-1</target>
                         <muleVersion>4.10.1</muleVersion>
-                        <username>${username}</username>
-                        <password>${password}</password>
+                        <connectedAppClientId>${clientId}</connectedAppClientId>
+                        <connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
+                        <connectedAppGrantType>client_credentials</connectedAppGrantType>
                         <applicationName>${project.artifactId}</applicationName>
                         <replicas>1</replicas>
                         <vCores>0.1</vCores>

@@ -31,8 +31,8 @@
                     <environment>Dev</environment>
                     <target>Cloudhub-AP-Southeast-1</target>
                     <muleVersion>4.10.0</muleVersion>
-                    <connectedAppClientId>3c09d374d12747b9833cfd3e4b6b179b</connectedAppClientId>
-                    <connectedAppClientSecret>4941De50B7434347A6dC39391dB31cA6</connectedAppClientSecret>
+                    <connectedAppClientId>${client.id}</connectedAppClientId>
+                    <connectedAppClientSecret>${client.secret}</connectedAppClientSecret>
                     <applicationName>${project.artifactId}</applicationName>
                     <replicas>1</replicas>
                     <vCores>0.1</vCores>

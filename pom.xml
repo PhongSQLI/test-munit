@@ -33,6 +33,7 @@
                     <muleVersion>4.10.0</muleVersion>
                     <connectedAppClientId>${client.id}</connectedAppClientId>
                     <connectedAppClientSecret>${client.secret}</connectedAppClientSecret>
+                    <connectedAppGrantType>connectedAppGrantType</connectedAppGrantType>
                     <applicationName>${project.artifactId}</applicationName>
                     <replicas>1</replicas>
                     <vCores>0.1</vCores>

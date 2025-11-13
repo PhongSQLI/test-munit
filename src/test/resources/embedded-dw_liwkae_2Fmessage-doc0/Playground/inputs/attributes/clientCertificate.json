@@ -1,0 +1,71 @@
+{
+  "basicConstraints": 0,
+  "criticalExtensionOIDs": [
+    "semper",
+    "sodales"
+  ],
+  "extendedKeyUsage": [
+    "sed",
+    "tincidunt",
+    "dictum"
+  ],
+  "extensions": [
+    {
+      "criticality": true,
+      "oid": "tempor"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Alice",
+      "type": 52
+    }
+  ],
+  "issuerDN": {
+    "commonName": "molestie",
+    "name": "Damon"
+  },
+  "issuerUniqueID": [
+    true,
+    true
+  ],
+  "issuerX500Principal": {
+    "name": "Alyse"
+  },
+  "keyUsage": [
+    true,
+    false
+  ],
+  "name": "Christian",
+  "nonCriticalExtensionOIDs": [
+    "nunc",
+    "tempor"
+  ],
+  "publicKey": {
+    "algorithm": "faucibus",
+    "modulus": 15,
+    "params": 11,
+    "publicKey": "a"
+  },
+  "serialNumber": 87,
+  "serialNumberObject": {
+    "serialNumber": 23
+  },
+  "sigAlgName": "venenatis",
+  "sigAlgOID": "a",
+  "subjectAlternativeNames": [
+    {
+      "name": "Dale",
+      "type": 97
+    }
+  ],
+  "subjectDN": {
+    "commonName": "a",
+    "name": "Almeda"
+  },
+  "subjectX500Principal": {
+    "name": "Clifton"
+  },
+  "type": "risus",
+  "version": 35
+}

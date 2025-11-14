@@ -4,7 +4,32 @@ on:
   push:
     branches: [ main ]
     
-jobs:         
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v4
+
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: 8
+    - name: Test with Maven
+      env:
+        nexus_username: ${{ secrets.nexus_username }}
+        nexus_password: ${{ secrets.nexus_password }}
+        KEY: ${{ secrets.decryption_key }}
+      run: mvn test --settings .maven/settings.xml -Dsecure.key="$KEY"      
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -29,3 +54,4 @@ jobs:
           mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
           -DclientId="${{ secrets.CONNECTED_APP_CLIENT_ID }}" \
           -DclientSecret="${{ secrets.CONNECTED_APP_CLIENT_SECRET }}"
+          -DsecureKey="${{ secrets.decryption_key }}"

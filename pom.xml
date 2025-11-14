@@ -10,6 +10,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mule.maven.plugin.version>4.5.2</mule.maven.plugin.version>
+        <munit.version>3.5.0</munit.version>
     </properties>
     <build>
         <plugins>
@@ -37,14 +38,41 @@
                         <applicationName>${project.artifactId}</applicationName>
                         <replicas>1</replicas>
                         <vCores>0.1</vCores>
+                        <properties>
+                            <secure.key>${secureKey}</secure.key>
+                        </properties>
                         <deploymentSettings>
                             <http>
-                            <inbound>
-                                <lastMileSecurity>true</lastMileSecurity>
-                            </inbound>
+                                <inbound>
+                                    <lastMileSecurity>true</lastMileSecurity>
+                                </inbound>
                             </http>
                         </deploymentSettings>
                     </cloudhub2Deployment>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mulesoft.munit.tools</groupId>
+                <artifactId>munit-maven-plugin</artifactId>
+                <version>${munit.version}</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                            <goal>coverage-report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <coverage>
+                        <formats>
+                            <format>html</format>
+                            <format>console</format>
+                        </formats>
+                        <runCoverage>true</runCoverage>
+                    </coverage>
                 </configuration>
             </plugin>
         </plugins>
@@ -86,6 +114,26 @@
             <artifactId>mule-http-connector</artifactId>
             <version>1.10.5</version>
             <classifier>mule-plugin</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-runner</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-tools</artifactId>
+            <version>${munit.version}</version>
+            <classifier>mule-plugin</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.weave</groupId>
+            <artifactId>assertions</artifactId>
+            <version>1.2.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <distributionManagement>

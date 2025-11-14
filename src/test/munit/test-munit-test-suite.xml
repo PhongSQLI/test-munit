@@ -1,0 +1,21 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="   http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd   http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd   http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+    <munit:config name="test-munit-test-suite.xml.xml"></munit:config>
+    <munit:test name="test-munit-test-suitename1Test">
+<munit:behavior>
+    <munit-tools:mock-when doc:name="Mock when" doc:id="qjacdy" processor="http:listener">
+            <munit-tools:with-attributes>
+                <munit-tools:with-attribute attributeName="doc:name" whereValue="Listener" />
+                <munit-tools:with-attribute attributeName="path" whereValue="test" />
+                <munit-tools:with-attribute attributeName="doc:id" whereValue="aoqqlx" />
+                <munit-tools:with-attribute attributeName="config-ref" whereValue="Listener-config" />
+            </munit-tools:with-attributes>
+        </munit-tools:mock-when>
+</munit:behavior>
+        <munit:execution>
+            <flow-ref name="name1"></flow-ref>
+        </munit:execution>
+    
+<munit:validation>
+    <munit-tools:assert-that doc:name="Assert that" doc:id="chzfrs" expression="#[payload]" is="#[MunitTools::equalTo('Hello World !!!')]"/>
+</munit:validation></munit:test>
+</mule>
